@@ -4,10 +4,14 @@ import '../styles/content.scss';
 interface ContentProps {
   selectedGenre: { title: string };
   movies: Array<{
+    imdbID: string;
     Title: string;
     Poster: string;
     Runtime: string;
-    Ratings: Array<{ Value: string }>;
+    Ratings: Array<{
+      Source: string;
+      Value: string
+     }>;
   }>;
 }
 
@@ -25,7 +29,7 @@ export function Content({ movies, selectedGenre }: ContentProps) {
         <div className="movies-list">
           {movies.map(movie => (
             <MovieCard
-              key={movie.Title}
+            key ={movie.imdbID}
               title={movie.Title}
               poster={movie.Poster}
               runtime={movie.Runtime}

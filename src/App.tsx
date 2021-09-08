@@ -11,6 +11,7 @@ interface GenreResponseProps {
 }
 
 interface MovieProps {
+  imdbID: string;
   Title: string;
   Poster: string;
   Ratings: Array<{
